@@ -8,7 +8,10 @@ int main(){
 
   for(int i = 0; i < sizeof(textos)/sizeof(string);i++){
 
-    //-----------------------------------------
+    //lo que hace flush sirve para hacer permanente lo que escribe el buffer
+    //lo escribimos para que se conserve el cout
+    //endl tambien contiene un flush, por lo tanto
+    //ahora que no tenemos endl lo tenemos que escribir explicito.
     cout << *(pTextos + i)  << " " << flush;
     //-----------------------------------------
   }

@@ -19,6 +19,7 @@ int main(){
   int valor5 = 12%5;
   cout << valor5 << endl;
 
+// Se recomienda poner () cuando se escriben ecuaciones complejas
   double ecuacion = 5.3/4 + 2*6;
   cout << ecuacion << endl;
 

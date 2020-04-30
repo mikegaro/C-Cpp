@@ -6,7 +6,7 @@ int main(){
 
   cout << "NO" << endl;
   if(5 == 5){
-    return 0;
+    cout << "Holi a todos" << endl;
   }
   return 0;
 }

@@ -16,7 +16,7 @@ int main(){
   valor4 /= 5;
   cout << valor4 << endl;
 
-  int valor5 = 13%5;
+  int valor5 = 12%5;
   cout << valor5 << endl;
 
   double ecuacion = 5.3/4 + 2*6;

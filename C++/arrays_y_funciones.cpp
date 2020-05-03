@@ -40,13 +40,13 @@ void freeMemoria(char *pMemoria){
 }
 
 int main(){
-
+  cout << "El grupo acaba de descubrir git y piensan que es brujeria" << endl;
   string textos[] = {"perro","gato","pucky"};
   cout << sizeof(textos) << endl;
   showl(3,textos);
-
   char *pMemoria = obtenerMemoria();
   freeMemoria(pMemoria);
-  
+
+
   return 0;
 }

@@ -1,5 +1,4 @@
 #include<iostream>
-
 using namespace std;
 
 void showl(int nElementos, string textos[]){
@@ -8,10 +7,46 @@ void showl(int nElementos, string textos[]){
   }
 }
 
+void showOtro(const int nElementos, string *textos){
+  for(int i = 0; i < nElementos; i++){
+    cout << textos[i] << endl;
+  }
+}
+
+void show2(string (&textos)[3]){
+  for (size_t i = 0; i < sizeof(textos)/sizeof(string); i++) {
+    /* code */
+    cout << textos[i] << endl;
+  }
+}
+
+//La siguiente funcion esta mal y no se puede concluir
+string *obtenerArray(){
+  //No podemos regresar pointers que apunten a variables locales
+  //porque cuando el scope termina, desaparece la variables
+  //entonces el pointer apunta a la nada.
+  string textos[] = {"uno","dos","tres"};
+  //incluso el debugger nos arroja una advertencia
+  return textos;
+}
+
+char *obtenerMemoria(){
+  char *pMemoria = new char[100];
+  return pMemoria;
+}
+
+void freeMemoria(char *pMemoria){
+  delete [] pMemoria;
+}
+
 int main(){
 
   string textos[] = {"perro","gato","pucky"};
   cout << sizeof(textos) << endl;
   showl(3,textos);
+
+  char *pMemoria = obtenerMemoria();
+  freeMemoria(pMemoria);
+  
   return 0;
 }

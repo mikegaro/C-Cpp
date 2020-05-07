@@ -36,6 +36,5 @@ int main(){
   c.hablar();
   c.saltar();
   c.fuerteRugido();
-
   return 0;
 }

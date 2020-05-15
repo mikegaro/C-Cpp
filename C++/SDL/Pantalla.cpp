@@ -29,34 +29,36 @@ bool Pantalla::init(){
     cout << "ERROR" << endl;
     return false;
   }
-  SDL_Window *ventana = SDL_CreateWindow("AM VISSION",
+  m_ventana = SDL_CreateWindow("AM VISSION",
   SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,SCREEN_WIDHT,
   SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
-  if(ventana == NULL){
+  if(m_ventana == NULL){
     SDL_Quit();
     return false;
   }
-  SDL_Renderer * render = SDL_CreateRenderer(ventana,-1,
+  m_render = SDL_CreateRenderer(m_ventana,-1,
                                             SDL_RENDERER_PRESENTVSYNC);
-  SDL_Texture * textura = SDL_CreateTexture(render,SDL_PIXELFORMAT_RGBA8888,
+  m_textura = SDL_CreateTexture(m_render,SDL_PIXELFORMAT_RGBA8888,
                                             SDL_TEXTUREACCESS_STATIC,
                                             SCREEN_WIDHT,SCREEN_HEIGHT);
-  if(render == NULL){
+  if(m_render == NULL){
     cout << "NO SE PUDO CREAR" << endl;
-    SDL_DestroyWindow(ventana);
+    SDL_DestroyWindow(m_ventana);
     SDL_Quit();
     return false;
   }
-  if(textura == NULL){
+  if(m_textura == NULL){
     cout << "NO SE PUDO CREAR TEXTURA" << endl;
-    SDL_DestroyRenderer(render);
-    SDL_DestroyWindow(ventana);
+    SDL_DestroyRenderer(m_render);
+    SDL_DestroyWindow(m_ventana);
     SDL_Quit();
     return false;
   }
-  Uint32 *buffer = new Uint32[SCREEN_WIDHT*SCREEN_HEIGHT];
-  memset(buffer, 0, SCREEN_WIDHT*SCREEN_HEIGHT*sizeof(Uint32));
-  buffer[30000] = 0xFFFFFFFF;
+  m_buffer = new Uint32[SCREEN_WIDHT*SCREEN_HEIGHT];
+  memset(m_buffer, 0, SCREEN_WIDHT*SCREEN_HEIGHT*sizeof(Uint32));
+  for(int i = 0; i < SCREEN_WIDHT*SCREEN_HEIGHT;i++){
+    m_buffer[i] = 0xFFFF00FF;
+  }
   SDL_UpdateTexture(m_textura, NULL, m_buffer, SCREEN_WIDHT*sizeof(Uint32));
   SDL_RenderClear(m_render);
   SDL_RenderCopy(m_render, m_textura, NULL, NULL);

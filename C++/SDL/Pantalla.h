@@ -1,6 +1,6 @@
 #define SDL_MAIN_HANDLED
-#ifndef SCREEN_H_
-#define SCREEN_H_
+#ifndef PANTALLA_H_
+#define PANTALLA_H_
 #include "SDL2/SDL.h"
 namespace clasePantalla{
 
@@ -18,6 +18,8 @@ public:
   bool init();
   bool processEvents();
   void close();
+  void update();
+  void setPixel(int x, int y, Uint8 red, Uint8 green, Uint8 blue);
 };
 }
 

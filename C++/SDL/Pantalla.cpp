@@ -56,18 +56,33 @@ bool Pantalla::init(){
   }
   m_buffer = new Uint32[SCREEN_WIDHT*SCREEN_HEIGHT];
   memset(m_buffer, 0, SCREEN_WIDHT*SCREEN_HEIGHT*sizeof(Uint32));
-  for(int i = 0; i < SCREEN_WIDHT*SCREEN_HEIGHT;i++){
-    m_buffer[i] = 0xFFFF00FF;
-  }
-  SDL_UpdateTexture(m_textura, NULL, m_buffer, SCREEN_WIDHT*sizeof(Uint32));
-  SDL_RenderClear(m_render);
-  SDL_RenderCopy(m_render, m_textura, NULL, NULL);
-  SDL_RenderPresent(m_render);
   return true;
 }
 //AQUI TERMINA EL INICIALIZADOR
 //******************************************************
 //******************************************************
+
+void Pantalla::update(){
+  SDL_UpdateTexture(m_textura, NULL, m_buffer, SCREEN_WIDHT*sizeof(Uint32));
+  SDL_RenderClear(m_render);
+  SDL_RenderCopy(m_render, m_textura, NULL, NULL);
+  SDL_RenderPresent(m_render);
+}
+
+void Pantalla::setPixel(int x, int y, Uint8 red, Uint8 green, Uint8 blue){
+
+  Uint32 color = 0;
+
+  color += red;
+  color <<= 8;
+  color += green;
+  color <<= 8;
+  color += blue;
+  color <<=8;
+  color += 0xFF;
+
+  m_buffer[(y*SCREEN_WIDHT) + x] = color;
+}
 
 //AQUI OCRUREN TODOS LOS PROCESOS
 bool Pantalla::processEvents(){

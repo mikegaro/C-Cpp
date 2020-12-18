@@ -25,19 +25,24 @@ int main(){
   animal.hablar();
 
   int otrovalor = 8;
+  //Aqui estamos creando un apuntador variable con entero variable
   int *pValue = &otrovalor;
   cout << *pValue << endl;
 
   int numero = 23;
+  //Aqui estamos creando un apuntador a  un entero constante.
+  //Tambien lo podemos escribir como const int *pValor
   int const*pValor = &numero;
   //*pValor = 12; <-- Esto no se puede
   //ya que el int es constante
   cout << *pValor << endl;
 
-  //Aqui declaramos un apuntador constante tipo int
+  //Aqui declaramos un apuntador constante con un int variable.
   int * const apConstante = &numero;
-  cout << *apConstante << endl;
+
   //apConstante = &otrovalor; <-- esto no se puede
-  //ya que el apuntador es constante
+  cout << *apConstante << endl;
+  //ya que el apuntador es constante, sin embargo lo que contenga el apuntador
+  //si se puede cambiar
   return 0;
 }

@@ -46,6 +46,8 @@ int main(){
   delete [] pAnimal;
 
   char c = 'a';
+  //No se porque meti esto aqui pero el punto es que se trata del
+  //"fill constructor", uno de los siete constructores posibles para la clase string
   string name(5,c);
   cout << name << endl;
 

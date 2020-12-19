@@ -16,7 +16,12 @@ private:
 private:
   string obtenerNombre(){return nombre;}
 public:
+  //Esta es una forma alternativa mas reducida para definir al constructor
   Rana(string nombre): nombre(nombre){}
+  /*Esto es equivalente a:
+    Rana(string nombre){
+      this->nombre = nombre;
+    }*/
   void info() {cout << "Mi nombre es: " << obtenerNombre() << endl;}
 };
 

@@ -1,6 +1,8 @@
 #include <iostream>
 using namespace std;
 
+void double_data(int *entero_ptr);
+
 int main()
 {
     //-----------------------------------------
@@ -89,5 +91,14 @@ int main()
     const int *const locked_score{&puntaje_mas_bajo};
     //La direccion tampoco puede cambiar
 
+    double_data(&puntaje_mas_alto);
+
+    cout << puntaje_mas_alto << endl;
+
     return 0;
+}
+
+void double_data(int *entero_ptr)
+{
+    *entero_ptr *= 2;
 }

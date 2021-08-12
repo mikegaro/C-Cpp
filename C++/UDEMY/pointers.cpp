@@ -2,6 +2,7 @@
 using namespace std;
 
 void double_data(int *entero_ptr);
+int *largest_int(int *primero, int *segudo);
 
 int main()
 {
@@ -94,6 +95,16 @@ int main()
     double_data(&puntaje_mas_alto);
 
     cout << puntaje_mas_alto << endl;
+    cout << endl;
+
+    //FUNCIONES QUE REGRESAN POINTERS
+
+    int i{100};
+    int j{50};
+
+    int *el_mas_grande{nullptr};
+    el_mas_grande = largest_int(&i, &j);
+    cout << *el_mas_grande << endl;
 
     return 0;
 }
@@ -101,4 +112,16 @@ int main()
 void double_data(int *entero_ptr)
 {
     *entero_ptr *= 2;
+}
+
+int *largest_int(int *primero, int *segundo)
+{
+    if (*primero > *segundo)
+    {
+        return primero;
+    }
+    else
+    {
+        return segundo;
+    }
 }

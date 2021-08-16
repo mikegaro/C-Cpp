@@ -3,6 +3,7 @@ using namespace std;
 
 void double_data(int *entero_ptr);
 int *largest_int(int *primero, int *segudo);
+int *create_array(size_t size, int init_value);
 
 int main()
 {
@@ -106,6 +107,11 @@ int main()
     el_mas_grande = largest_int(&i, &j);
     cout << *el_mas_grande << endl;
 
+    //REGRESANDO DYNAMICALLY ALLOCATED MEMORY
+    int *mi_arreglo;
+    mi_arreglo = create_array(100, 20);
+    delete[] mi_arreglo;
+
     return 0;
 }
 
@@ -124,4 +130,15 @@ int *largest_int(int *primero, int *segundo)
     {
         return segundo;
     }
+}
+
+//FUNCION QUE REGRESA DYNAMICALLY ALLOCATED MEMORY
+
+int *create_array(size_t size, int init_value = 0)
+{
+    int *new_storage{nullptr};
+    new_storage = new int[size];
+    for (size_t i{0}; i < size; ++i)
+        *(new_storage + i) = init_value;
+    return new_storage;
 }

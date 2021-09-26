@@ -112,6 +112,22 @@ int main()
     mi_arreglo = create_array(100, 20);
     delete[] mi_arreglo;
 
+    /* 
+    REFERENCIAS -> No son los mismos que los pointers ya que se declaran con & y 
+    sirven similar a un acceso directo en una aplicacion de Windows
+
+*/
+    int numerito{100};
+    int &referencia{numerito};
+
+    numerito = 200; //Modificando el numero
+    cout << numerito << endl;
+    cout << referencia << endl;
+
+    referencia = 300;
+    cout << numerito << endl; //Modificando la referencia
+    cout << referencia << endl;
+
     return 0;
 }
 

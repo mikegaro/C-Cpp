@@ -118,7 +118,7 @@ int main()
 
 */
     int numerito{100};
-    int &referencia{numerito};
+    int &referencia{numerito}; //Estas tambien se conocen como L-Value references
 
     numerito = 200; //Modificando el numero
     cout << numerito << endl;
@@ -127,6 +127,31 @@ int main()
     referencia = 300;
     cout << numerito << endl; //Modificando la referencia
     cout << referencia << endl;
+
+    /*  L-VALUES,
+
+    ->Un L-value tiene nombres y es addressable
+    ->Un L-value es modificable si no es const  */
+
+    int un_simple_x{100}; // un_simple_x es un l-value
+    un_simple_x = 1000;
+    un_simple_x = 1000 + 20;
+
+    string un_smple_nombre; //un_simple_nombre es un l-value
+    un_smple_nombre = "Frank";
+
+    /*  R-VALUES
+
+    ->Un R-value es un non-addressable
+    ->Un R-value no es asignable
+    ->Un R-value es un literal que siempre esta del lado derecho del =
+    ->Un R-value es un temporal que esta hecho para ser no-modificable  */
+
+    int otro_x{100};           //100 is an R-value
+    int otro_y = otro_x + 200; //(otro_x +200) es un R-value
+
+    string otro_name{"Frank"}; //"Frank" es un R-value
+    int max_num = max(20, 30); //max(20,30) es un R-value
 
     return 0;
 }

@@ -5,12 +5,12 @@
 using namespace std;
 
 class Player {
-private:
+    private:
     //Atributos
     string name;
     int health;
     int xp;
-public:
+    public:
     //Metodos
     void talk( ) { cout << "quiubo soy" << name << endl; }
     void set_name( string texto ) { name = texto; }
@@ -41,11 +41,24 @@ public:
         cout << "Constructor con tres argumentos -> ";
         cout << "quiuo soy " << name << " y tengo " << health << " de vida y " << xp << " xp." << endl;
     }
+    Player( const Player & source );//PROTOTIPO DEL COPY CONSTRUCTOR
+
     ~Player( ) {
         cout << "Iniciando destructor para " << name << endl;
     }
+
 };
 
+//DEFINIENDO EL COPY CONSTRUCTOR
+Player::Player( const Player & source ) : name( source.name ), health( source.health ), xp( source.xp ) {
+    cout << "Copy constructor creado de " << source.name << endl;
+}
+
+//AQUI ES DONDE SE UTILIZA EL COPY CONSTRUCTOR
+void display_player( Player p ) {
+    cout << "Nombre: ";
+    p.talk( );
+}
 
 int main( ) {
 
@@ -58,6 +71,7 @@ int main( ) {
         elmikidos.talk( );
         elmikidos.set_name( "mai" );
         elmikidos.talk( );
+        display_player( elmikidos );
     }
 
     Account frank_account;

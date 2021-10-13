@@ -5,24 +5,39 @@
 using namespace std;
 
 class Player {
-    private:
+private:
     //Atributos
     string name;
     int health;
     int xp;
-    public:
+public:
     //Metodos
     void talk( ) { cout << "quiubo soy" << name << endl; }
     void set_name( string texto ) { name = texto; }
     bool is_dead( ) { return true; }
-    Player( ) {
+
+    //ESTA FORMA DE INICIALIZAR ES MUY EFECTIVA YA QUE
+    //SE ASOCIAN LAS VARIABLES MIENTRAS SE CREA EL OBJETO Player
+    Player( ) : name{ "None" }, health{ 0 }, xp{ 0 } {
         cout << "Constructor sin argumentos -> " << endl;
     }
+
+    //ESTA FORMA DE INICIALIZAR NO ES TAN EFICIENTE YA QUE
+    //SE INICIALIZAN LAS VARIABLES CON BASURA Y LUEGO SE INICIALIZAN COMO LO INDICAMOS
     Player( string name ) {
+        name = name;
         cout << "Constructor con argumento -> ";
         cout << "quiuo soy " << name << endl;
     }
+    //CONSTRUCTOR QUE EN REALIDAD USA OTRO CONSTRUCTOR -> CONSTRUCTOR DELEGATION
+    Player( string name, int health ) : Player{ name,health, 0 } {
+        cout << "Constructor con dos argumentos -> ";
+        cout << "quiuo soy " << name << " y tengo " << health << " de vida y " << xp << " xp." << endl;
+    }
     Player( std::string name, int health, int xp ) {
+        name = name;
+        health = health;
+        xp = xp;
         cout << "Constructor con tres argumentos -> ";
         cout << "quiuo soy " << name << " y tengo " << health << " de vida y " << xp << " xp." << endl;
     }

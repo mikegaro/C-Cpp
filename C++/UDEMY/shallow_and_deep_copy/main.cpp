@@ -50,13 +50,15 @@ class DeepCopy {
     public:
     void set_info_value( int d ) { *info = d; }
     int get_info_value( ) { return *info; }
-    DeepCopy( int d ) {
-        info = new int;
-        *info = d;
-    }
+    DeepCopy( int d );
     DeepCopy( const DeepCopy & source );
     ~DeepCopy( );
 };
+
+DeepCopy::DeepCopy( int d ) {
+    info = new int;
+    *info =
+}
 
 DeepCopy::~DeepCopy( ) {
     delete info; //free storage
@@ -87,26 +89,26 @@ void display_deep( DeepCopy s ) {
 
 int main( ) {
 
-    // {
-    //     ShallowCopy principal{ 100 };
-    //     displayShallowCopy( principal );
-    //     //Cuando la funcion displayShallowCopy termine, se destruirá "s"
-    //     //pero al destruir "s" el destructor tiene indicado hacer "delete data"
-    //     //lo cual provoca que desaparezca el 100.
-    //     // Mientras tanto, la variable "principal" no esta enterada
-    //     // de que desaparecio el 100 ya que "principal" no almacena valores
-    //     //solo pointers. Por lo que ahora "principal" esta apuntando a basura.
+    {
+        ShallowCopy principal{ 100 };
+        displayShallowCopy( principal );
+        //Cuando la funcion displayShallowCopy termine, se destruirá "s"
+        //pero al destruir "s" el destructor tiene indicado hacer "delete data"
+        //lo cual provoca que desaparezca el 100.
+        // Mientras tanto, la variable "principal" no esta enterada
+        // de que desaparecio el 100 ya que "principal" no almacena valores
+        //solo pointers. Por lo que ahora "principal" esta apuntando a basura.
 
-    //     ShallowCopy secundario{ principal };
-    //     //Ahora secundario hace copia a principal, lo cual significa
-    //     //que va a copiar el pointer de principal que está apuntando a
-    //     //basura. Ahora "principal" y "secundario" apuntan a basura
+        ShallowCopy secundario{ principal };
+        //Ahora secundario hace copia a principal, lo cual significa
+        //que va a copiar el pointer de principal que está apuntando a
+        //basura. Ahora "principal" y "secundario" apuntan a basura
 
-    //     secundario.set_data_value( 1000 );
-    //     //Secundario llama a la funcion para cambiar el valor de lo que
-    //     //está apuntando. Pero como "principal" y "secundario apuntan"
-    //     //al mismo lugar, ahora principal tiene el valor de 1000
-    // }
+        secundario.set_data_value( 1000 );
+        //Secundario llama a la funcion para cambiar el valor de lo que
+        //está apuntando. Pero como "principal" y "secundario apuntan"
+        //al mismo lugar, ahora principal tiene el valor de 1000
+    }
 
     {
         //Ahora con deep hemos arreglado ese problema

@@ -5,12 +5,12 @@
 using namespace std;
 
 class Player {
-    private:
+private:
     //Atributos
     string name;
     int health;
     int xp;
-    public:
+public:
     //Metodos
     void talk( ) { cout << "quiubo soy" << name << endl; }
     void set_name( string texto ) { name = texto; }
@@ -61,7 +61,6 @@ void display_player( Player p ) {
 }
 
 int main( ) {
-
     {
         Player elmiki;
         elmiki.talk( );

@@ -33,14 +33,24 @@
 using namespace std;
 
 int main( ) {
+    {
+        MyString empty; //no args constructor
+        MyString larry( "Larry" ); //one-arg constructor
+        MyString stooge{ larry }; // copy constructor
 
-    MyString empty; //no args constructor
-    MyString larry( "Larry" ); //one-arg constructor
-    MyString stooge{ larry }; // copy constructor
+        empty.display( );
+        larry.display( );
+        stooge.display( );
+    }
 
-    empty.display( );
-    larry.display( );
-    stooge.display( );
+    MyString a{ "Hello" };
+    a.display( );
+    MyString b;
+    b.display( );
+    b = a;
+    b.display( );
 
+    b = "This is a test...";
+    b.display( );
     return 0;
 }

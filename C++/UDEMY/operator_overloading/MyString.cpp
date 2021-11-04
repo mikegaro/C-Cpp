@@ -28,6 +28,13 @@ MyString::MyString( const MyString & source ) : str{ nullptr } {
     std::strcpy( str, source.str );
 }
 
+// -> Move Constructor
+MyString::MyString( MyString && source )
+    :str( source.str ) {
+    source.str = nullptr;
+    std::cout << "Move Constructor usado" << std::endl;
+}
+
 // -> Destructor
 MyString::~MyString( ) {
     delete[ ] str;
@@ -36,7 +43,7 @@ MyString::~MyString( ) {
 /*
 
      Aqui definimos el override del operador =
-
+     Usando el metodo de copy assignment
 */
 MyString & MyString::operator=( const MyString & rhs ) {
     std::cout << "Copy assignment" << std::endl;
@@ -46,6 +53,22 @@ MyString & MyString::operator=( const MyString & rhs ) {
     delete[ ] this->str;
     str = new char[std::strlen( rhs.str ) + 1];
     std::strcpy( this->str, rhs.str );
+    return *this;
+}
+
+/*
+
+    Aqui definimos el override del operador =
+    Usando el metodo de move assignment
+*/
+MyString & MyString::operator=( MyString && rhs ) {
+    std::cout << "Usando Move Assignment" << std::endl;
+    if ( this == &rhs ) {
+        return *this;
+    }
+    delete[ ] str;
+    str = rhs.str;
+    rhs.str = nullptr;
     return *this;
 }
 

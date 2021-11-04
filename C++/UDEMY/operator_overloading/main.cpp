@@ -53,7 +53,11 @@ int main( ) {
     b = "This is a test...";
     b.display( );
 
-
+    {
+        MyString a{ "Hello" }; // Overloaded Constructor
+        a = MyString{ "Hola" }; //Overloaded Constructor y despues el MOVE assignment;
+        a = "Bonjour";        //Overloaded COnstructor y despues el MOVE assignment
+    }
 
     return 0;
 }

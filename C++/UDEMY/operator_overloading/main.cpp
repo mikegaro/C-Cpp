@@ -34,6 +34,7 @@ using namespace std;
 
 int main( ) {
     {
+        // -> OPERATOR COPY ASSIGNMENT
         MyString empty; //no args constructor
         MyString larry( "Larry" ); //one-arg constructor
         MyString stooge{ larry }; // copy constructor
@@ -54,9 +55,27 @@ int main( ) {
     b.display( );
 
     {
+        // -> OPERATOR MOVE ASSIGNMENT
         MyString a{ "Hello" }; // Overloaded Constructor
         a = MyString{ "Hola" }; //Overloaded Constructor y despues el MOVE assignment;
         a = "Bonjour";        //Overloaded COnstructor y despues el MOVE assignment
+    }
+
+    {
+        // -> OPERATOR OVERLOADING AS MEMBER FUNCTIONS
+        MyString larry{ "Larry" };
+        MyString clark_kent{ "Pepe" };
+
+        MyString superman = clark_kent;
+        cout << ( larry == superman ) << endl;
+        cout << ( clark_kent == superman ) << endl;
+
+        larry.display( );
+        MyString mini_larry = -larry;
+        mini_larry.display( );
+
+        MyString semidios = superman + "Batman"; //USANDO MEMBER FUNCTION
+        // MyString otro_semidios = "Larry" + superman; //COMPILER ERROR ->
     }
 
     return 0;

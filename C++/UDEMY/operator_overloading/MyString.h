@@ -17,6 +17,11 @@ public:
     MyString & operator=( MyString && rhs );        // -> Move Assignment (no es constructor)
         // -> Con el operator= logramos el overload
 
+    // -> OPERATOR OVERLOADING COMO MEMBER FUNCTION
+    MyString operator-( ) const;         //hacer el string lowercase
+    MyString operator+( const MyString & rhs ) const;
+    bool operator==( const MyString & rhs ) const;
+
     void display( ) const;
     int get_lenght( ) const;
     const char * get_str( ) const;     //getters

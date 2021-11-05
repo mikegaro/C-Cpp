@@ -39,7 +39,6 @@ MyString::MyString( MyString && source )
 MyString::~MyString( ) {
     delete[ ] str;
 }
-
 /*
 
      Aqui definimos el override del operador =
@@ -70,6 +69,32 @@ MyString & MyString::operator=( MyString && rhs ) {
     str = rhs.str;
     rhs.str = nullptr;
     return *this;
+}
+
+// -> EQUALITY  
+bool MyString::operator==( const MyString & rhs ) const {
+    return ( std::strcmp( str, rhs.str ) == 0 );
+}
+
+// -> MAKE LOWERCASE
+MyString MyString::operator-( ) const {
+    char * buff = new char[std::strlen( str ) + 1];
+    std::strcpy( buff, str );
+    for ( size_t i = 0; i < std::strlen( buff );++i )
+        buff[i] = std::tolower( buff[i] );
+    MyString temp{ buff };
+    delete[ ] buff;
+    return temp;
+}
+
+// -> CONCATENATE
+MyString MyString::operator+( const MyString & rhs ) const {
+    char * buff = new char[std::strlen( str ) + std::strlen( rhs.str ) + 1];
+    std::strcpy( buff, str );
+    std::strcat( buff, rhs.str );
+    MyString temporary{ buff };
+    delete[ ] buff;
+    return temporary;
 }
 
 

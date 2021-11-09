@@ -71,35 +71,39 @@ MyString & MyString::operator=( MyString && rhs ) {
     return *this;
 }
 
-// -> EQUALITY  
-bool MyString::operator==( const MyString & rhs ) const {
-    return ( std::strcmp( str, rhs.str ) == 0 );
-}
-
-// -> MAKE LOWERCASE
-MyString MyString::operator-( ) const {
-    char * buff = new char[std::strlen( str ) + 1];
-    std::strcpy( buff, str );
-    for ( size_t i = 0; i < std::strlen( buff );++i )
-        buff[i] = std::tolower( buff[i] );
-    MyString temp{ buff };
-    delete[ ] buff;
-    return temp;
-}
-
-// -> CONCATENATE
-MyString MyString::operator+( const MyString & rhs ) const {
-    char * buff = new char[std::strlen( str ) + std::strlen( rhs.str ) + 1];
-    std::strcpy( buff, str );
-    std::strcat( buff, rhs.str );
-    MyString temporary{ buff };
-    delete[ ] buff;
-    return temporary;
-}
-
 
 void MyString::display( ) const { std::cout << str << ":" << get_lenght( ) << std::endl; }
 
 int MyString::get_lenght( ) const { return std::strlen( str ); }
 
 const char * MyString::get_str( ) const { return str; }
+
+/*
+
+     OPERATOR OVERLOADING COMO GLOBAL FUNCTIONS EN LUGAR DE MEMBER FUNCTIONS
+
+*/
+
+bool operator==( const MyString & lhs, const MyString & rhs ) {
+    return ( std::strcmp( lhs.str, rhs.str ) == 0 );
+}
+
+MyString operator-( const MyString & obj ) {
+    char * buff = new char[std::strlen( obj.str ) + 1];
+    std::strcpy( buff, obj.str );
+    for ( size_t i = 0; i < std::strlen( buff ); ++i )
+        buff[i] = std::tolower( buff[i] );
+    MyString temp{ buff };
+    delete[ ] buff;
+    return temp;
+}
+
+MyString operator+( const MyString & lhs, const MyString & rhs ) {
+    char * buff = new char[std::strlen( rhs.str ) + 1];
+    std::strcpy( buff, lhs.str );
+    std::strcat( buff, rhs.str );
+
+    MyString temp{ buff };
+    delete[ ] buff;
+    return temp;
+}

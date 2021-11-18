@@ -110,6 +110,5 @@ int main( ) {
         Base DESTRUCTOR
         Base DESTRUCTOR
     */
-
     return 0;
 }

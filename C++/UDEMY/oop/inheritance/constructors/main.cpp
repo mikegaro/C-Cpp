@@ -53,18 +53,35 @@ class Derived : public Base {
 private:
     int double_value;
 public:
-    Derived( ) : double_value{ 0 } { cout << "Derived no-arg CONSTRUCTOR" << endl; }
-    Derived( int x ) : double_value{ x * 2 } { cout << "Derived(int) CONSTRUCTOR" << endl; }
+
+    // -> Derived Constructor
+    Derived( ) :
+        Base{},/* Sin el Base{}, solo Derived se va a inicializar */
+        double_value{ 0 } {cout << "Derived no-arg CONSTRUCTOR" << endl;}
+
+    // -> Derived one-arg overloaded constructor
+    Derived( int x ) :
+        Base{ x },/* Sin el Base{x}, solo Derived va a recbibir el parámetro */
+        double_value{ x * 2 } { cout << "Derived(int) CONSTRUCTOR" << endl; }
+
+    // -> Destructor
     ~Derived( ) { cout << "Derived DESTRUCTOR" << endl; }
 };
 
 int main( ) {
+
     Base b{ 100 };
     Derived d{ 1000 };
+
     // -> Aunque d.double_value es 2000 como esperabamos
     // -> la clase Base nunca recibió este argumento y
     // -> por lo tanto d.value (Base) es igual a 0 cuando
     // -> en realidad debería ser 1000
-    return 0;
 
+    // -> Para arreglar este problema, tenemos que incluir a Base{}
+    // -> en los constructores de Derived
+
+    // -> Ahora Base y Derived tienen los parametros que se supone que deben tener
+
+    return 0;
 }

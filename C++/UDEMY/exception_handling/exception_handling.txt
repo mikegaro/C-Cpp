@@ -1,0 +1,31 @@
+BASIC CONCEPTS
+
+-> EXCEPTION HANDLING
+    -> Dealing with extraordinary situations
+    -> Indicates that an extraordinary situation has been detected or has occurred
+    -> Program can deal with the issue
+
+-> WHAT CAUSES EXCEPTION?
+    -> Insufficient resources
+    -> Missing resources
+    -> Invalid operations
+    -> Range violations
+    -> Underflows and overflows
+    -> Illegal data and many others
+
+-> EXCEPTION SAFE
+    -> When your code handles exception
+
+-> EXCEPTION
+    -> An object or primitive type that signals that an error has occurred
+
+-> Throwing an exception (raising an exception)
+    -> Your code detects that an error has accurred or will occur
+    -> The place where the error occurred may not know how to handle the error
+    -> Code can throw an exception describing the error to another part of the program 
+        that knows how to handle the error.
+
+-> CATCHING AN EXCEPTION (HANDLE THE EXCEPTION)
+    -> Code that handles the exception
+    -> May or may not cause the program to terminate.
+

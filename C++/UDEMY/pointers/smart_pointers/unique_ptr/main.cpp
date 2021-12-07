@@ -21,7 +21,7 @@ using namespace std;
 
 class A {
 public:
-    void show( )     {
+    void show( ) {
         cout << "A::show()" << endl;
     }
 };
@@ -47,4 +47,3 @@ int main( ) {
     cout << p3.get( ) << endl;
 
     return 0;
-}

@@ -1,0 +1,39 @@
+WHAT IS THE STL?
+
+-> A library of powerful, reusable, adaptable, generic classes and functions
+
+-> Implemented using C++ templates
+
+-> Implements commmon data structures and algorithms
+
+-> Huge class library
+
+-> IS AN ASSORTMENT OF COMMONLY USED CONTAINERS
+    -> Known time and size complexity
+    -> Tried and tested - reusable
+    -> Consistent, fast, and type-safe
+
+-> Extensible
+
+STL HAS THREE MAIN COMPONENTS
+
+-> CONTAINERS
+    ->Sequence (array,vector, list, forward_list, deque)
+    ->Associative (set, multi_set, map, multi_map)
+    ->Adapters (stack, queue, priority queue)
+
+-> algorithms
+    -Non-modifying
+    -modifying
+
+
+-> Iterators
+    -Generate sequences of elements from CONTAINERS
+    -> Input Iterators
+    -> Output Iterators
+    -> Forward Iterators
+    -> Bi-directional Iterators
+
+
+    
+

@@ -6,7 +6,7 @@
 
     -> Function and class templates
 
-    -> Allow plugging-in any data type
+    -> Allow plugging-in any data type <- La caracteristica mas importante de los templates
 
     -> Compiler generates the appropriate function/class from the blueprint
 
@@ -43,7 +43,7 @@ struct Persona {
 
 template <typename T1, typename T2>
 void func( T1 a, T2 b ) {
-    std::cout << a << " " << std::endl;
+    std::cout << a << " " << b << std::endl;
 }
 
 int main( ) {
@@ -62,6 +62,5 @@ int main( ) {
     func( 10, 20 ); // -> the compiler finds out what data type is
     func<char, double>( 'A', 12.4 );
     func( 'A', 12.4 ); // -> the compiler finds out what data type is
-
     return 0;
 }

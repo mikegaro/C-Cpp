@@ -5,9 +5,9 @@ using namespace std;
 //ShallowCopy
 //-----------------------------------------------------------
 class ShallowCopy {
-    private:
+private:
     int * data;
-    public:
+public:
     void set_data_value( int d ) { *data = d; }
     int get_data_value( ) { return *data; }
     ShallowCopy( int d );
@@ -55,7 +55,7 @@ int main( ) {
     //lo cual provoca que desaparezca el 100.
     // Mientras tanto, la variable "principal" no esta enterada
     // de que desaparecio el 100 ya que "principal" no almacena valores
-    //solo pointers. Por lo que ahora "principal" esta apuntando a basura.
+    // solo pointers. Por lo que ahora "principal" esta apuntando a basura.
 
     ShallowCopy secundario{ principal };
     //Ahora secundario hace copia a principal, lo cual significa

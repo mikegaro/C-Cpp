@@ -1,0 +1,15 @@
+
+CONTENEDORES
+
+-> SON DATA STRUCTURES THAT CAN STORE OBJECTS OF ALMOST ANY TYPE
+-> SON CLASES BASADAS EN TEMPLATES
+-> CADA CONTENEDOR TIENE SUS MEMBER FUNCTIONS
+-> CADA CONTENEDOR TIENE UN HEADER FILE ASOCIADO A EL MISMO
+#include<container_type>
+
+ QUE PODEMOS ALMACENAR EN LOS CONTAINERS?
+
+-> Una COPIA del elemento sera guardado en el CONTENEDOR
+-> Los elementos deberian ser:
+    -> Asignable y copiable (copy constructor)
+    -> Movible (move constructor)

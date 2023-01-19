@@ -1,0 +1,102 @@
+cmake_minimum_required(VERSION 3.10)
+project(C_Cpp)
+
+set(CMAKE_CXX_STANDARD 14)
+
+include_directories(C++/UDEMY/oop/class/class_oop)
+include_directories(C++/UDEMY/oop/class/operator_overloading/op_as_global_func)
+include_directories(C++/UDEMY/oop/class/operator_overloading/op_as_member_func)
+include_directories(C++/UDEMY/oop/class/static_class)
+include_directories(C++/UDEMY/oop/inheritance/herencia_simple)
+include_directories(C++/UDEMY/oop/inheritance/redefine_base_methods)
+
+add_executable(C_Cpp
+        C++/AlgoProblem/climbing_leaderbord/main.cpp
+        C++/Referencias/allocating_memory.cpp
+        C++/Referencias/arrays_y_funciones.cpp
+        C++/Referencias/bitwise_and.cpp
+        C++/Referencias/char++.cpp
+        C++/Referencias/char_arrays.cpp
+        C++/Referencias/const_keyword.cpp
+        C++/Referencias/copy_constructors.cpp
+        C++/Referencias/encapsulacion.cpp
+        C++/Referencias/herencia.cpp
+        C++/Referencias/herencia_y_constructores.cpp
+        C++/Referencias/operador_New.cpp
+        C++/Referencias/pointer_aritmetica.cpp
+        C++/Referencias/references.cpp
+        C++/Referencias/returning_objects.cpp
+        C++/Referencias/static.cpp
+        C++/Referencias/string_pointers.cpp
+        C++/Referencias/string_volteado.cpp
+        C++/Referencias/TestLibrary.cpp
+        C++/Referencias/timeconv.cpp
+        C++/Referencias/timeconversion.cpp
+        C++/Referencias/two_sets_hackerrank.cpp
+        C++/Referencias/voltear_una_frase.cpp
+        C++/UDEMY/basics/main.cpp
+        C++/UDEMY/enums/main.cpp
+        C++/UDEMY/exception_handling/dividing_by_zero/main.cpp
+        "C++/UDEMY/exception_handling/exception as classes/main.cpp"
+        C++/UDEMY/exception_handling/exception_from_function/main.cpp
+        C++/UDEMY/exception_handling/multiple_exception/main.cpp
+        C++/UDEMY/exception_handling/stack_unwinding/main.cpp
+        C++/UDEMY/file_io/reading_file/main.cpp
+        C++/UDEMY/file_io/writing_file/main.cpp
+        C++/UDEMY/io_and_streams/stream_manipulators/align_and_fill/main.cpp
+        C++/UDEMY/io_and_streams/stream_manipulators/boolean/main.cpp
+        C++/UDEMY/io_and_streams/stream_manipulators/floating/main.cpp
+        C++/UDEMY/io_and_streams/stream_manipulators/integer/main.cpp
+        C++/UDEMY/io_and_streams/string_stream/main.cpp
+        C++/UDEMY/lambdas/stateful_lambda/main.cpp
+        C++/UDEMY/lambdas/stateless_lambda/lambdas.cpp
+        C++/UDEMY/oop/class/class_oop/Account.cpp
+        C++/UDEMY/oop/class/class_oop/Account.h
+        C++/UDEMY/oop/class/class_oop/main.cpp
+        C++/UDEMY/oop/class/const_en_classes/main.cpp
+        C++/UDEMY/oop/class/deep_copy/main.cpp
+        C++/UDEMY/oop/class/friend_of_class/main.cpp
+        C++/UDEMY/oop/class/move_copy/main.cpp
+        C++/UDEMY/oop/class/operator_overloading/op_as_global_func/main.cpp
+        C++/UDEMY/oop/class/operator_overloading/op_as_global_func/MyString.cpp
+        C++/UDEMY/oop/class/operator_overloading/op_as_global_func/MyString.h
+        C++/UDEMY/oop/class/operator_overloading/op_as_member_func/main.cpp
+        C++/UDEMY/oop/class/operator_overloading/op_as_member_func/MyString.cpp
+        C++/UDEMY/oop/class/operator_overloading/op_as_member_func/MyString.h
+        C++/UDEMY/oop/class/shallow_copy/main.cpp
+        C++/UDEMY/oop/class/static_class/main.cpp
+        C++/UDEMY/oop/class/static_class/Player.cpp
+        C++/UDEMY/oop/class/static_class/Player.h
+        C++/UDEMY/oop/class/this/main.cpp
+        C++/UDEMY/oop/inheritance/constructors/main.cpp
+        C++/UDEMY/oop/inheritance/copy_constructors/main.cpp
+        C++/UDEMY/oop/inheritance/herencia_simple/Account.cpp
+        C++/UDEMY/oop/inheritance/herencia_simple/Account.h
+        C++/UDEMY/oop/inheritance/herencia_simple/main.cpp
+        C++/UDEMY/oop/inheritance/herencia_simple/Savings_Account.cpp
+        C++/UDEMY/oop/inheritance/herencia_simple/Savings_Account.h
+        C++/UDEMY/oop/inheritance/multiple_inheritance/main.cpp
+        C++/UDEMY/oop/inheritance/protected_members/main.cpp
+        C++/UDEMY/oop/inheritance/redefine_base_methods/Cuenta.cpp
+        C++/UDEMY/oop/inheritance/redefine_base_methods/Cuenta.h
+        C++/UDEMY/oop/inheritance/redefine_base_methods/Cuenta_Ahorros.cpp
+        C++/UDEMY/oop/inheritance/redefine_base_methods/Cuenta_Ahorros.h
+        C++/UDEMY/oop/inheritance/redefine_base_methods/main.cpp
+        C++/UDEMY/oop/polymorphism/abstract_class/main.cpp
+        C++/UDEMY/oop/polymorphism/abstract_class_interface/main.cpp
+        C++/UDEMY/oop/polymorphism/base_class_references/main.cpp
+        C++/UDEMY/oop/polymorphism/el_problema/main.cpp
+        C++/UDEMY/oop/polymorphism/final_specifier/main.cpp
+        C++/UDEMY/oop/polymorphism/override/main.cpp
+        C++/UDEMY/oop/polymorphism/virtual_func_destructor/main.cpp
+        C++/UDEMY/oop/polymorphism/virtual_functions/main.cpp
+        C++/UDEMY/pointers/raw_pointers/pointers.cpp
+        C++/UDEMY/pointers/smart_pointers/custom_deleters/main.cpp
+        C++/UDEMY/pointers/smart_pointers/shared_ptr/main.cpp
+        C++/UDEMY/pointers/smart_pointers/unique_ptr/main.cpp
+        C++/UDEMY/pointers/smart_pointers/waek_ptr/main.cpp
+        C++/UDEMY/stl/class_template/main.cpp
+        C++/UDEMY/stl/class_template_array/main.cpp
+        C++/UDEMY/stl/containers/iterators/main.cpp
+        C++/UDEMY/stl/function_templates/main.cpp
+        C++/UDEMY/stl/macros_generic/main.cpp)

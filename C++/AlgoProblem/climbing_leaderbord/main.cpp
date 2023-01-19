@@ -1,24 +1,24 @@
 #include<iostream>
-#include<vector>
-#include<assert.h>
+#include<cassert>
 
 using namespace std;
 
-int search_index( vector<vector<int>> lista, int primero, int segundo, int value ) {
-    while ( primero <= segundo ) {
-        int mid = ( primero + segundo ) / 2;
-        if ( lista[mid][1] == value ) {
-            return lista[mid][0];
+int search_index(vector<vector<int>> &list, int first, int segundo, int value )
+{
+    while (first <= segundo ) {
+        int mid = (first + segundo ) / 2;
+        if (list[mid][1] == value ) {
+            return list[mid][0];
         }
-        if ( lista[mid][1] > value ) primero = mid + 1;
-        if ( lista[mid][1] < value ) segundo = mid - 1;
+        if (list[mid][1] > value ) first = mid + 1;
+        if (list[mid][1] < value ) segundo = mid - 1;
     }
-    if ( primero == lista.size( ) ) return lista[segundo][0] + 1;
-    if ( segundo < 0 ) return lista[primero][0];
-    return lista[primero][0];
+    if (first == list.size( ) ) return list[segundo][0] + 1;
+    if ( segundo < 0 ) return list[first][0];
+    return list[first][0];
 }
 
-vector<int> climbingLeaderboard( vector<int> ranked, vector<int> player ) {
+std::vector<int> climbingLeaderboard( vector<int> ranked, vector<int> player ) {
     int rank{ 1 };
     vector<vector<int>> indexes;
     vector<int>results;
@@ -30,7 +30,7 @@ vector<int> climbingLeaderboard( vector<int> ranked, vector<int> player ) {
         }
     }
 
-    //MAPPING LISTO DE LAS POSICIONES
+    //MAPPING LIST DE LAS POSSESSION
     cout << "SIZE: " << indexes.size( ) << endl;
     int pivot{ ( int ) indexes.size( ) };
     for ( auto i : player ) {

@@ -6,7 +6,7 @@ int main( ) {
 
   string * pTextos = textos;
 
-  for ( auto i = 0; i < sizeof( textos ) / sizeof( string );i++ ) {
+  for ( size_t i = 0; i < sizeof( textos ) / sizeof( string );i++ ) {
 
     //lo que hace flush sirve para hacer permanente lo que escribe el buffer
     //lo escribimos para que se conserve el cout

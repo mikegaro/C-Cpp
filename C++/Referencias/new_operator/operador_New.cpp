@@ -1,29 +1,29 @@
 #include<iostream>
 
-using namespace std;
-
 class Animal{
 private:
-  string nombre;
+  std::string nombre;
 
 public:
   //Constructor
-  Animal(){
-    cout << "Animal creado" << endl;
+  Animal():nombre(" ")
+  {
+    std::cout << "Animal creado" << std::endl;
   }
   //Copy constructor
-  Animal(const Animal& otroAnimal): nombre(otroAnimal.nombre) {
-  cout << "Animal creado por copia" << endl;
+  Animal(const Animal& otroAnimal): nombre(otroAnimal.nombre)
+  {
+  std::cout << "Animal creado por copia" << std::endl;
   }
   //Destructor
   ~Animal(){
-    cout << "Destruyendo animal jejeje" << endl;
+    std::cout << "Destruyendo animal jejeje" << std::endl;
   }
-  void setNombre(string nombre){
+  void setNombre(std::string nombre){
     this->nombre = nombre;
   }
   void hablar() const{
-    cout << "Mi nombre es: " << nombre << endl;
+    std::cout << "Mi nombre es: " << nombre << std::endl;
   }
 };
 

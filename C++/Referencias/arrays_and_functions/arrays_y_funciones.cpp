@@ -1,19 +1,20 @@
 #include<iostream>
 using namespace std;
 
-void showl(int nElementos, string textos[]){
-  for(int i = 0; i < sizeof(textos); i++){
+void showl(string textos[]){
+  for(size_t i = 0; i < sizeof(textos); i++){
     cout << textos[i] << endl;
   }
 }
 
 void showOtro(const int nElementos, string *textos){
-  for(int i = 0; i < nElementos; i++){
+  for(size_t i = 0; i < nElementos; i++){
     cout << textos[i] << endl;
   }
 }
 
 void show2(string (&textos)[3]){
+
   for (size_t i = 0; i < sizeof(textos)/sizeof(string); i++) {
     /* code */
     cout << textos[i] << endl;
@@ -41,9 +42,8 @@ void freeMemoria(char *pMemoria){
 
 int main(){
   cout << "El grupo acaba de descubrir git y piensan que es brujeria" << endl;
-  string textos[] = {"perro","gato","pucky"};
-  cout << sizeof(textos) << endl;
-  showl(3,textos);
+  string textos[3] = {"perro","gato","pucky"};
+  showl(textos);
   char *pMemoria = obtenerMemoria();
   freeMemoria(pMemoria);
 

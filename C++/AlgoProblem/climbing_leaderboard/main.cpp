@@ -1,5 +1,6 @@
 #include<iostream>
 #include<cassert>
+#include<vector>
 
 using namespace std;
 
@@ -13,12 +14,12 @@ int search_index(vector<vector<int>> &list, int first, int segundo, int value )
         if (list[mid][1] > value ) first = mid + 1;
         if (list[mid][1] < value ) segundo = mid - 1;
     }
-    if (first == list.size( ) ) return list[segundo][0] + 1;
+    if ((size_t)first == list.size( ) ) return list[segundo][0] + 1;
     if ( segundo < 0 ) return list[first][0];
     return list[first][0];
 }
 
-std::vector<int> climbingLeaderboard( vector<int> ranked, vector<int> player ) {
+vector<int> climbingLeaderboard( vector<int> ranked, vector<int> player ) {
     int rank{ 1 };
     vector<vector<int>> indexes;
     vector<int>results;

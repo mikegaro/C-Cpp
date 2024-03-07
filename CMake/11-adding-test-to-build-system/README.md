@@ -1,11 +1,23 @@
 ### Steps to run
 
+For this section we need to install the googletest workspace
+
 Install googletest in the `externals` directory
+```shell
+cd externals/
+git clone https://github.com/google/googletest.git
+```
+
+
 
 ```shell
 cmake -S . -B build
 cd build/out
 ./CalculatorTests
+
+
+
+
 ```
 Output should look like this
 ```

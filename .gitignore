@@ -5,3 +5,4 @@ cmake-build-debug-remote-host/
 *.xml
 .idea/
 build/
+googletest/

@@ -6,3 +6,5 @@ cmake-build-debug-remote-host/
 .idea/
 build/
 googletest/
+bin/
+out/
